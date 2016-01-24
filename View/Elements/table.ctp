@@ -6,8 +6,8 @@ $times = Benchmark::getTimes();
 	<?php foreach ($times as $benchmark): ?>
 		<tr>
 			<td><?php echo __($benchmark['label']); ?></td>
-			<td><?php echo number_format($benchmark['increment'], 2); ?></td>
-			<td><?php echo number_format($benchmark['age'], 2); ?></td>
+			<td><?php echo number_format($benchmark['increment'], 2); ?>s</td>
+			<td><?php echo number_format($benchmark['age'], 2); ?>s</td>
 		</tr>
 	<?php endforeach; ?>
 </table>

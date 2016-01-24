@@ -64,4 +64,21 @@ class Benchmark {
 		self::$times[] = array($label, $val);
 		return $val;
 	}
+
+	public static function output() {
+		$times = self::getTimes();
+		$output = [];
+		foreach ($times as $benchmark):
+			$output[] = [
+				'label' => __($benchmark['label']),
+				'increment' => number_format($benchmark['increment'], 2) . 's',
+				'total' => number_format($benchmark['age'], 2) . 's',
+			];
+		endforeach;
+		return $output;
+	}
+
+	public static function debug() {
+		debug(self::output());
+	}
 }
